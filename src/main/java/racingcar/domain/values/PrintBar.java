@@ -10,4 +10,8 @@ public enum PrintBar {
         this.shape = shape;
     }
 
+    public String getShape(){
+        return shape;
+    }
+
 }

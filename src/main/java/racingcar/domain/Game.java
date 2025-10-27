@@ -7,9 +7,9 @@ import racingcar.domain.values.PrintBar;
 import java.util.*;
 
 public class Game {
-    private int trynum;
-    private List<Car> carList;
-    private List<String> winners = findWinners();//우승자->게임 종료 후 출력용
+    private final int trynum;
+    private List<Car> carList = new ArrayList<>();
+    private List<String> winners;//우승자->게임 종료 후 출력용
 
     public Game(List<Car> carList, int trynum){
         this.carList = carList;
@@ -21,7 +21,7 @@ public class Game {
     //게임 시작 => 
     public void play() {
         System.out.println();
-        System.out.println(Instructions.RESULT);
+        System.out.println(Instructions.RESULT.getMessage());
 
         //게임 trynum만큼 반복하기
         for (int i = 0; i <trynum; i++) {
@@ -48,15 +48,15 @@ public class Game {
     private String getBar(int position) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < position; i++) {
-            sb.append(PrintBar.BAR);//그냥 단순 car의 position 가시화
+            sb.append(PrintBar.BAR.getShape());//그냥 단순 car의 position 가시화
         }
         return sb.toString();
     }
 
     public void printFinalWinner(){//우승자 출력하기
         winners = findWinners();
-        System.out.print(Instructions.FINAL_WINNER);
-        System.out.println(String.join(", ", winners));
+        System.out.print(Instructions.FINAL_WINNER.getMessage());
+        System.out.println(String.join(" : ", winners));
     }
 
     private List<String> findWinners() {

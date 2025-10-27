@@ -12,4 +12,8 @@ public enum Instructions {
         this.message = message;
     }
 
+    public String getMessage(){
+        return message;
+    }
+
 }
