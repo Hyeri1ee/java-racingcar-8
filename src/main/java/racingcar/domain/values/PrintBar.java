@@ -9,4 +9,5 @@ public enum PrintBar {
     PrintBar(String shape) {
         this.shape = shape;
     }
+
 }
