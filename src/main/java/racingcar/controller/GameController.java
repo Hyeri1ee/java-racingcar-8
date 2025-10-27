@@ -10,7 +10,9 @@ import java.util.List;
 
 public class GameController {
 
+    //GameController로 Game에서의 메소드 조합하기
     public void run(){
+
         System.out.println(Instructions.INPUT_CAR_IN_GAME);
         String carNamesInput = Console.readLine();
         List<Car> cars = Input.parseCarNames(carNamesInput);
@@ -20,7 +22,7 @@ public class GameController {
         int attempts = Input.parseCount(attemptInput);
 
         Game game = new Game(cars, attempts);
-        game.play();
-        game.printFinalWinner();
+        game.play();//게임시작
+        game.printFinalWinner();//최종 우승자
     }
 }

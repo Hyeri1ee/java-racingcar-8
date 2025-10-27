@@ -12,6 +12,7 @@ public class Car {
         this.position = 0;
     }
 
+    //이름 빈 값인지, 5자 초과인지 판별
     private void validateName(String name) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.CARNAME_NOTEMPTY.getMessage());//깔끔?
@@ -26,12 +27,13 @@ public class Car {
     }
 
     public int getPosition(){
+
         return this.position;
     }
 
     //자동차가 전진하는 메서드
     public void move(int randomNum) {
-        if (randomNum >= 4) {//4 이상인 경우에만 
+        if (randomNum >= 4) {//4 이상인 경우에만 전진하도록
             this.position++;
         }
     }
