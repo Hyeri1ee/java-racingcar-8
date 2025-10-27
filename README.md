@@ -3,7 +3,7 @@
 ### 설계
 1. Main에서의 진입점 최소
 2. 도메인의 역할 분리 (Car, Game) => /domain Car, Game 클래스 생성
-3. Car도 여러개, Game도 여러개 -> CarController, GameController 로 각 도메인의 행위를 분리하여 통제
+3. Car도 여러개, Game도 여러개 -> GameController 로 각 도메인의 행위를 분리하여 통제
 
 ### 구현시 주의한 부분
 
@@ -15,4 +15,4 @@
 ### 구현후 배우고 싶은거/의문점
 
 1. missionUtils의 assertSimpleTest 함수의 편의성
-2. //값이 특정될수 없고 예측 불가능한 경우 어떻게 테스트를 하는게 효과적인지
+2. 값이 특정될수 없고 예측 불가능한 경우 어떻게 테스트를 하는게 효과적인지

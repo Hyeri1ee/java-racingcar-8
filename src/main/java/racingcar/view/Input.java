@@ -10,9 +10,7 @@ public class Input {
 
     //자동차에 대한 입력값 나누기
     public static List<Car> parseCarNames(String input) {
-        if (input == null || input.trim().isEmpty()) {
-            throw new IllegalArgumentException();
-        }
+        validateIsEmpty(input);
 
         String[] names = input.split(",");
         List<Car> cars = new ArrayList<>();
@@ -28,17 +26,23 @@ public class Input {
         return cars;
     }
 
+
     //숫자에 대한 입력값
     public static int parseCount(String input) {
-        if (input == null || input.trim().isEmpty()) {
-            throw new IllegalArgumentException(ErrorMessage.INPUT_EMPTY.getMessage());
-        }
+        validateIsEmpty(input);
 
         try {
             return Integer.parseInt(input.trim());
 
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ErrorMessage.NUM.getMessage());
+        }
+    }
+
+    //위 두 함수에 공통 적용
+    private static void validateIsEmpty(String input) {
+        if (input == null || input.trim().isEmpty()) {
+            throw new IllegalArgumentException(ErrorMessage.INPUT_EMPTY.getMessage());
         }
     }
 }

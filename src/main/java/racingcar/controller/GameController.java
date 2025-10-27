@@ -14,13 +14,13 @@ public class GameController {//Game 도메인의 메소드 조합 역할
         System.out.println(Instructions.INPUT_CAR_IN_GAME.getMessage());//enum으로 상수화 => 첫번째 지시문
         String carNamesInput = Console.readLine();
 
-        List<Car> cars = Input.parseCarNames(carNamesInput);//enum으로 상수화-> 두번째 지시문
+        List<Car> cars = Input.parseCarNames(carNamesInput);//enum으로 상수화
 
-        System.out.println(Instructions.INPUT_TRY_NUM.getMessage());//enum으로 상수화-> 세번째 지시문
-        String attemptInput = Console.readLine();
-        int attempts = Input.parseCount(attemptInput);
+        System.out.println(Instructions.INPUT_TRY_NUM.getMessage());//enum으로 상수화-> 두번째 지시문
+        String num = Console.readLine();
+        int number = Input.parseCount(num);
 
-        Game game = new Game(cars, attempts);
+        Game game = new Game(cars, number);
         game.play();//게임시작
         game.printFinalWinner();//최종 우승자
     }
