@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import racingcar.domain.values.Instructions;
+import racingcar.utils.Instructions;
 import racingcar.domain.values.PrintBar;
 
 import java.util.*;
