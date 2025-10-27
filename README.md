@@ -16,3 +16,21 @@
 
 1. missionUtils의 assertSimpleTest 함수의 편의성
 2. 값이 특정될수 없고 예측 불가능한 경우 어떻게 테스트를 하는게 효과적인지
+3. 오류 메시지가 다르고, 다른 클래스에서 같은 기능을 검사하는 메소드는 어떻게 처리해야 좋은가
+    ```java
+   // Car.java
+   //이름 빈 값인지, 5자 초과인지 판별
+   private void validateName(String name) {
+   if (name == null || name.isEmpty()) {
+   throw new IllegalArgumentException(ErrorMessage.CARNAME_NOTEMPTY.getMessage());//깔끔?
+   }...
+    ```
+   ```java
+    //Input.java
+   //위 두 함수에 공통 적용
+   private static void validateIsEmpty(String input) {
+   if (input == null || input.trim().isEmpty()) {
+   throw new IllegalArgumentException(ErrorMessage.INPUT_EMPTY.getMessage());
+   }
+   }
+   ```
